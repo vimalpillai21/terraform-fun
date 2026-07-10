@@ -1,0 +1,4 @@
+mkdir NetworkModule/module/network 
+nano main.tf
+nano variables.tf
+nano output.tf

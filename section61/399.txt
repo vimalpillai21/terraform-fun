@@ -1,0 +1,3 @@
+nano main.tf -- under NetworkModule
+nano variables.tf -- under NetworkModule
+nano output.tf -- under NetworkModule

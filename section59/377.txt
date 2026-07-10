@@ -1,0 +1,31 @@
+mkdir Terraform for AWS Cloud
+mkdir VPC_NAT_EC2INSTANCE
+nano vpc.tf
+nano provider.tf
+nano nat.tf
+git push
+--- in Terraform machine ---
+cd terraform
+ls
+git pull
+ls
+cd Terraform for AWS Cloud
+cd VPC_NAT_EC2INSTANCE
+ls
+clear
+terraform init
+clear
+terraform plan 
+copy variables.tf into cwd
+git push
+git pull
+clear
+terraform plan
+enter secret key
+clear
+terraform apply 
+enter secret key
+enter a value - yes
+check all the resources in the AWS
+
+

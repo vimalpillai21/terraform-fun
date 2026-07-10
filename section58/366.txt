@@ -1,0 +1,33 @@
+cd /root/terraform
+ls
+git pull 
+ls 
+cd Terraform Concepts Building Blocks/
+ls
+terraform plan
+enter secret_key
+terraform init
+clear
+terraform plan
+enter secret key 
+generate public and private key
+ssh-keygen -f levelup_key
+keep blank values and hit enter
+clear
+ls
+terraform plan
+enter AWS_SECRET_KEY
+go to ec2 console
+go to security groups under network and security section
+edit the inbound rules and add rules
+all traffic -- MyIP -- Save rules
+go to terminal
+terraform apply
+enter secret key
+enter a value - yes
+copy ip on instance and open in browser --> nginx page
+terraform destroy
+enter a value - yes
+
+
+    

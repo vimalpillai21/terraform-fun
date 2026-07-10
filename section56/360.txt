@@ -1,0 +1,14 @@
+cd terraform/Start With Terraform Basics/
+ls
+cat terraform.tfstate
+terraform plan
+clear
+terraform apply
+enter a value - "Yes"
+go to ec2 and check 
+clear
+cat terraform.tfstate
+terraform destroy
+
+
+

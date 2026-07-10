@@ -1,0 +1,41 @@
+mkdir Terraform_Project_Structure
+create directories under above directory
+mkdir modules --> mkdir vpc
+mkdir Development
+mkdir Production
+under vpc folder
+nano vpc.tf 
+nano variable.tf
+mkdir instances under modules folder
+
+under instances
+nano createInstance.tf
+nano variable.tf
+
+under Development
+nano main.tf
+nano variable.tf 
+
+
+---- in terraform machine -----
+git pull
+cd Terraform_Project_Structure/
+cd Development
+terraform init
+clear
+terraform plan
+terraform apply
+
+go AWS Management console and go to EC2 under us-west-2
+cd ../Production
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+change availability zone
+git pull
+pwd
+terraform apply
+go to AWS Management console
+terraform destroy --> in both environments
+

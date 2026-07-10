@@ -1,0 +1,19 @@
+mkdir custom_vpc
+mkdir Development, Development_QA under custom_vpc
+copy files provider.tf, variables.tf and vpc.tf
+
+cd terrform/
+git pull
+clear
+cd Terraform_Modules/custom_vpc/
+ls
+cd Development
+terrform init
+terrform plan 
+terrform apply
+enter a value - "yes"
+cd ../Development_QA/
+terrform init
+terrform apply
+go to AWS Management console and open the VPC 
+us-east-1 and us-east-2

@@ -1,0 +1,38 @@
+go to aws management console
+select region --> us-east-2
+go to IAM section
+go to user section
+
+enter username - "terraadmin" and select access type - "programmatic access"
+click next permission
+click create group in next page
+enter group name - terraform-admin
+Select policy name - "Administrator Access" --> Click on "Create Group" button
+Click on "Next: Tags"
+
+enter tag
+key - purpose, value - terraform-admin
+Click on "Next: Review"
+Click on "Create User"
+Click on "Close" button
+
+Go to "Dashboard" section
+Select "EC2" from services --> Go to EC2 dashboard 
+Go to Security Groups under "Network and Security"
+open the default security group
+Go to Inbound Traffic Rules
+Click "Edit InBound Rules"
+
+Inbound Rules
+Type - All Traffic
+protocol - All
+Port Range - All
+Source - Custom
+Provide IP Address of terraform machine - <IP_ADDRESS> of DigitalOcean Droplet. Provide CIDR Range of  /32
+
+For Linux/Windows local machine
+Select Source - "My IP"
+Click on "Save Rules"
+
+
+

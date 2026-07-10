@@ -1,0 +1,32 @@
+mkdir AWS IAM-Roles
+nano s3bucket.tf, iamroles.tf 
+copy provider.tf, variables.tf, createInstance.tf
+cd terraform/
+git pull
+cd Terraform for AWS Cloud II/AWS-IAM-Roles/
+
+ls
+terraform init
+clear
+ssh-keygen -f levelup_key
+terraform plan
+terraform apply -- error in s3 bucket
+terraform apply 
+ssh public_ip -l ubuntu -i levelup_key
+--- 
+clear
+sudo -s
+apt update
+apt install python-pip python-dev
+clear
+pip install awscli
+clear
+ls
+echo "hi this is my terraform class" > myfile.txt
+cat myfile.txt
+aws s3 cp myfile.txt s3://levelup-bucket-141
+go to AWS S3 console and refresh
+exit
+---
+terraform destroy
+

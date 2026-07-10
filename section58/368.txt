@@ -1,0 +1,94 @@
+create directory inside Terraform Concept Buidling Blocks
+name of directory - Demo DataSource
+copy files - createInstance.tf, provider.tf, variables.tf into the directory
+cd terraform/Terraform Concepts Building Blocks/
+ls
+git pull
+ls
+cd Demo DataSource
+ls
+terraform init
+clear
+terraform plan
+enter secret key
+edit createInstance.tf and add the following
+---
+data "aws_availability_zones" "available" {}
+
+resource "aws_instance" "MyFirstInstance" {
+    ami = lookup(var.AMIS, var.AWS_REGION)
+    instance_type = "t2.micro"
+    availability_zone = data.aws_availability_zones.available.names[1]
+    tags = {
+        Name = "custom_instance
+    }
+}
+---
+git pull
+clear
+cat createInstance.tf
+terraform plan
+clear
+nano createInstance.tf
+---
+.names[2]
+---
+terraform plan
+enter secret key
+nano createInstance.tf
+---
+.names[7]
+---
+terraform plan
+enter secret key
+nano createInstance.tf
+---
+.names[0]
+---
+terraform plan
+clear
+
+nano createInstance.tf
+---
+data "aws_availability_zones" "available" {}
+
+data "aws_ami" "latest-ubuntu" {
+    most_recent = true
+    owner = ["099720109477"]
+
+    filter {
+        name = "name"
+        values = ["ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"]
+    }
+
+    filter {
+        name = "virtualization-type"
+        values = ["hvm"]
+    }
+}
+
+resource "aws_instance" "MyFirstInstance" {
+    ami = data.aws_ami.latest-ubuntu.id
+    instance_type = "t2.micro"
+    availability_zone = data.aws_availability_zones.available.names[1]
+    tags = {
+        Name = "custom_instance
+    }
+}
+---
+git pull
+cat createInstance.tf
+clear
+terraform plan
+enter secret key
+remove default values for "us-east-1" and "us-east-2"  in variables.tf
+git pull
+cat variables.tf
+clear
+terraform plan -var AWS_REGION="us-east-1"
+enter secret key
+
+
+
+
+

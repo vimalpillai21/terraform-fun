@@ -1,0 +1,32 @@
+nano security_group.tf
+cd terraform/Terraform for AWS Cloud/VPC_NAT_EC2INSTANCE/
+git pull
+ssh-keygen -f levelup_key
+enter 3 times and no value
+ls
+clear
+terraform plan
+enter AWS secret
+terraform apply
+enter AWS secret
+enter a value - yes
+go to EC2 dashboard
+ssh 3.15.222.189 -l ubuntu -i levelup_key and enter yes for fingerprint
+---
+hostname
+clear
+sudo -s
+sudo apt update
+apt install wget
+apt install curl
+clear
+curl https://www.google.com
+clear
+curl https://www.facebook.com
+exit
+---
+clear
+terraform destroy
+
+
+

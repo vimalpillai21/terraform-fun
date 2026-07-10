@@ -1,0 +1,15 @@
+cd terrform/ --> execution with root user
+git pull
+clear
+cd /root/.ssh/
+ls
+ssh-keygen -f levelup_key
+cd terrform/NetworkModule/
+terrform plan
+terrform apply
+go to AWS Management console --> go to specific region
+go to VPC
+go to ec2
+
+
+

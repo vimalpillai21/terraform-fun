@@ -1,0 +1,24 @@
+create another file - provider.tf
+---
+provider "aws" {
+    access_key = "",
+    secret_key = "",
+    region = "us-east-2"
+}
+---
+cd terraform
+git pull
+cd "Start With Terraform Basics"/
+cat provider.tf
+cat createinstance.tf
+terraform plan --> error
+vi provider.tf
+terraform plan
+clear
+terraform apply
+enter a value - "Yes"
+Check created instance in AWS EC2 
+terraform destroy
+
+
+

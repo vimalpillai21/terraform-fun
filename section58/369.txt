@@ -1,0 +1,41 @@
+nano securitygroup.tf
+---
+data "aws_ip_ranges" "us_east_ip_range" {
+    regions = ["us-east-1", "us-east-2"]
+    services = ["ec2"]
+}
+
+resource "aws_security_group" "sg-custom_us_east" {
+    name = "sg-custom_us_east"
+
+    ingress {
+        from_port = "443"
+        to_port = "443"
+        protocol = "tcp"
+        cidr_blocks = data.aws_ip_ranges.us_east_ip_range.cidr_blocks
+    }
+
+    tags =  {
+        CreateDate = data.aws_ip_ranges.us_east_ip_range.create_date
+        SyncToken = data.aws_ip_ranges.us_east_ip_range.sync_token
+    }
+}
+---
+cd terraform/Terraform Concepts Building Blocks/Demo DataSource/
+git pull
+ls
+terraform plan -var AWS_REGION="us-east-1"
+enter a value - AWS_SECRET_KEY
+clear
+terraform apply
+enter a value - AWS_SECRET_KEY
+enter a value - yes
+go to EC2 and check instances
+go to security groups
+checkout rules
+terraform destroy
+
+
+
+
+

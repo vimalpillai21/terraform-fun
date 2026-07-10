@@ -1,0 +1,52 @@
+edit the createInstance.tf
+---
+resource "aws_instance" "MyFirstInstance" {
+    count = 3
+    ami = "ami-id"
+    instance_type = "t2.micro"
+
+    tags = {
+        Name = "threedemoinstance"
+    }
+}
+---
+cd terraform/Start With Terraform Basics/
+ls
+cat createInstance.tf
+git pull
+cat createInstance.tf
+terraform plan
+git commit
+git pull
+cat createInstance.tf
+terraform plan
+terraform apply
+enter a value - "yes"
+go to ec2 dashboard and check --> verify instance ids
+terraform destroy
+enter a value - "yes"
+edit the createInstance.tf
+---
+resource "aws_instance" "MyFirstInstance" {
+    count = 3
+    ami = "ami-id"
+    instance_type = "t2.micro"
+
+    tags = {
+        Name = "threedemoinstance-${count.index}"
+    }
+}
+---
+git commit
+git pull 
+cat createInstance.tf
+terraform plan
+clear
+terraform apply
+enter a value - "yes"
+go to ec2 dashboard and check
+
+
+
+
+

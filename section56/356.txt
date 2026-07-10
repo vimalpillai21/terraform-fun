@@ -1,0 +1,39 @@
+create createinstance.tf
+---
+provider "aws" {
+    access_key = "",
+    secret_key = "",
+    region = "us-east-2"
+}
+resource "aws_instance" "MyFirstInstance" {
+    ami = "ami-id"
+    instance_type = "t2.micro"
+}
+---
+clear
+git pull
+directory - /StartWithTerraformBasics
+ls
+vi createinstance.tf
+clear
+ls
+terraform init
+terraform apply
+enter a value - "Yes"
+in AWS Management Console --> go to dashboard --> go to ec2
+copy id of resource from terminal
+clear
+terraform destroy
+enter a value - "Yes"
+in AWS Management Console --> go to dashboard --> go to ec2
+clear
+terraform plan
+terraform plan -out myfirstplan.out
+clear
+terraform apply "myfirstplan.out"
+terraform destroy
+enter a value - "Yes"
+
+
+
+

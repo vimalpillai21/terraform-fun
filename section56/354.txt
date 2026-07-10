@@ -1,0 +1,37 @@
+mkdir providers
+cd providers
+ls
+nano main.tf
+
+provider "aws" {
+    version = "3.53.0"
+    region     = "us-east-1"
+}
+
+# Configure the Microsoft Azure Provider
+provider "azurerm" {
+    version = "2.72.0"
+    features {}
+}
+
+export TF_LOG=TRACE
+terraform init
+clear
+ls
+ls -a 
+cd .terraform 
+ls 
+cd providers
+ls
+cd registry.terraform.io
+ls
+cd hashicorp
+ls 
+cd aws
+ls
+cd ../../../
+cat .terraform.lock.hcl 
+clear
+
+
+

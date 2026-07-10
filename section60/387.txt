@@ -1,0 +1,34 @@
+mkdir Terraform for AWS Cloud II 
+mkdir AWS RDS
+copy createInstance.tf, provider.tf, vpc.tf and variables.tf into above folder
+copy security_group.tf into above folder
+create rds.tf 
+cd terraform
+git pull
+cd Terraform for AWS Cloud II/ AWS RDS/ 
+clear
+pwd
+ls
+terraform init 
+clear
+ssh-keygen -f levelup_key
+clear
+terraform plan
+terraform apply 
+ssh public_ip -l ubuntu -i levelup_key
+sudo apt update
+sudo apt install mysql-client
+mysql -u root -h mariadb_endpoint -p password
+---
+show databases;
+exit
+---
+exit
+
+go to AWS management console and go to RDS and check
+
+ssh public_ip -l ubuntu -i levelup_key
+mysql -u root -h mariadb_endpoint -p password
+
+terraform destroy
+

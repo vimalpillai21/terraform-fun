@@ -1,0 +1,76 @@
+create directory Terraform Variables -- previous
+create variables.tf
+---
+variable "AWS_ACCESS_KEY" {}
+variable "AWS_SECRET_KEY" {}
+variable "AWS_REGION" {
+    default = "us-east-2"
+}
+variable "Security_Group" {
+    type = "list"
+    default = ["sg-24076", "sg-90890", "sg-456789"]
+}
+---
+create file --> createInstance.tf
+---
+resource "aws_instance" "MyFirstInstance" {
+    ami = "ami-id"
+    instance_type = "t2.micro"
+
+    tags = {
+        Name = "threedemoinstance"
+    }
+
+    security_groups = "${var.Security_Group}"
+}
+---
+git push
+cd terraform/Terraform Variables/
+git pull
+cat createInstance.tf
+cat variables.tf
+terraform plan
+
+create variables.tf
+---
+variable "AWS_ACCESS_KEY" {}
+variable "AWS_SECRET_KEY" {}
+variable "AWS_REGION" {
+    default = "us-east-2"
+}
+variable "Security_Group" {
+    type = "list"
+    default = ["sg-24076", "sg-90890", "sg-456789"]
+}
+
+variable "AMIS" {
+    type = map
+    default = {
+        us-east-1 = "ami-1"
+        us-east-2 = "ami-2"
+        us-west-2 = "ami-3"
+        us.west-1 = "ami-4"
+    }
+}
+---
+create file --> createInstance.tf
+---
+resource "aws_instance" "MyFirstInstance" {
+    ami = lookup(var.AMIS, var.AWS_REGION)
+    instance_type = "t2.micro"
+
+    tags = {
+        Name = "threedemoinstance"
+    }
+
+    security_groups = "${var.Security_Group}"
+}
+---
+clear
+git pull
+terraform plan
+clear
+terraform plan -var AWS_REGION="us-west-2"
+
+
+

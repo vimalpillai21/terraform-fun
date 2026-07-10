@@ -1,0 +1,21 @@
+cd terraform/Terraform Concepts Building Blocks/Demo DataSource/
+ls
+rm -rf terraform.tfstate terraform.tfstate.backup
+terraform plan -var AWS_REGION="us-east-1"
+clear
+terraform apply
+clear
+ls
+cat terraform.tfstate
+clear
+terraform apply
+terminate the instance from the ec2 dashboard
+go to terminal and execute command
+terraform apply
+enter AWS_SECRET_KEY
+enter a value - yes
+go to EC2 dashboard and check
+ls
+terraform destroy
+enter AWS_SECRET_KEY
+

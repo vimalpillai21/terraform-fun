@@ -1,0 +1,12 @@
+*.pdf
+*.tfvars
+.terraform
+.terraform.lock.hcl
+*.out
+terraform.tfstate
+terraform.tfstate.backup
+creds.txt
+vimalpillai_accessKeys.csv
+levelup_key
+levelup_key.pub
+my_private_ips.txt

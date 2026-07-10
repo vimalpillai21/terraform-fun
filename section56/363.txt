@@ -1,0 +1,59 @@
+create directory Terraform Variables
+create file --> createInstance.tf
+---
+resource "aws_instance" "MyFirstInstance" {
+    ami = "ami-id"
+    instance_type = "t2.micro"
+
+    tags = {
+        Name = "threedemoinstance"
+    }
+}
+---
+create provider.tf 
+---
+provider "aws" {
+    access_key = "${var.AWS_ACCESS_KEY}"
+    secret_key = "${var.AWS_SECRET_KEY}"
+    region = "${var.AWS_REGION}"
+}
+---
+create variables.tf
+---
+variable "AWS_ACCESS_KEY" {}
+variable "AWS_SECRET_KEY" {}
+variable "AWS_REGION" {
+    default = "us-east-2"
+}
+---
+git push
+cd terraform/Start With Terraform Basics/
+git pull
+cd terraform/Terraform Variables/
+ls
+clear
+ls
+terraform init
+clear 
+terraform plan
+enter AWS_ACCESS_KEY
+enter AWS_SECRET_KEY
+clear
+terraform plan
+enter correct AWS_ACCESS_KEY
+enter correct AWS_SECRET_KEY
+clear
+terraform plan -var AWS_ACCESS_KEY="" -var AWS_SECRET_KEY=""
+clear
+nano terraform.tfvariables
+---
+AWS_ACCESS_KEY=""
+AWS_SECRET_KEY=""
+---
+terraform plan
+clear
+ls
+
+
+
+

@@ -1,0 +1,47 @@
+go to AWS S3 dashboard and create an s3 bucket
+tick the versioning checkbox
+go to DataSource folder and create backend.tf file
+---
+terraform {
+    backend "s3" {
+        bucket = "tf-state-98fty"
+        key = "development/terraform_state"
+        region = "us-east-2"
+    }
+}
+---
+git push
+cd terraform/Terraform Concepts Building Blocks/Demo DataSource/
+git pull
+ls
+cat backend.tf
+clear
+sudo apt update
+sudo apt install awscli
+clear
+aws configure
+enter access key and secret key
+enter default region - us-east-2
+default output format [None]: leave blank and hit enter
+clear
+git pull
+terraform init
+clear
+terraform plan -var AWS_REGION="us-east-1"
+enter "Secret Key"
+clear
+terraform apply
+enter "Secret Key"
+enter confirmation
+go to S3 console and check the terraform state file
+download file
+copy Etag 
+go to ec2 dashboard and terminate the instance
+terraform apply
+enter a value - yes
+go to S3 and check etag again -- it is different
+check other versions of the file
+
+
+
+

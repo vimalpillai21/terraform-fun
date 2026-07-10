@@ -1,0 +1,22 @@
+mkdir UserData inside Terraform for AWS Cloud
+copy createInstance.tf, provider.tf and variables.tf into above folder
+cd terraform
+git pull
+cd Terraform for AWS Cloud/UserData/
+ls
+clear
+terraform init
+terraform plan
+terraform apply
+ssh public_ip -l ubuntu -i levelup_key
+---
+clear
+systemctl status apache2
+open the ec2 instance public ip in browser and check apache2 message
+exit
+---
+terraform destroy
+
+
+
+

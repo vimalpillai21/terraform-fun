@@ -1,0 +1,96 @@
+cd Terraform for AWS Cloud
+mkdir EBS Volume
+copy createInstance.tf, provider.tf and variables.tf into the folder
+---terraform machine---
+cd terraform
+git pull
+cd terraform/Terraform for AWS Cloud/EBS Volume/
+ls
+ssh-keygen -f levelup_key
+ls 
+clear 
+ls
+terraform init
+terraform plan
+enter secret key
+clear
+terraform apply 
+enter a value - yes
+clear
+check instance on EC2 and copy ip address
+ssh publicIP -l ubuntu -i levelup_key
+sudo -s 
+df -h 
+clear
+mkfs.ext4 /dev/xvdh
+df -h 
+mkdir -p /data
+mount /dev/xvdh /data
+df -h 
+clear 
+df -h 
+select the instance and reboot it 
+ssh publicIP -l ubuntu -i levelup_key
+df -h 
+clear 
+ls
+sudo -s 
+mkdir -p /data
+mount /dev/xvdh /data
+df -h 
+nano /etc/fstab
+---
+/dev/xvdh /data ext4 defaults 0 0
+---
+reboot the instance
+ssh publicIP -l ubuntu -i levelup_key
+sudo -s 
+df -h 
+cd /data/ 
+ls 
+mkdir test
+cd test
+echo "Hi, This is Vimal" > test.txt
+ls 
+cat test.txt 
+reboot the instance
+
+ssh publicIP -l ubuntu -i levelup_key
+cd /data/ 
+ls
+cd test/
+ls
+cat test.txt 
+terminate the EBS attached EC2 instance
+
+clear
+terraform plan 
+clear
+terraform apply 
+enter secret key and enter a value - yes
+go to EC2 instance and refresh. CHeck the newly created instance
+copy public ip 
+clear
+ssh newPublicIP -l ubuntu -i levelup_key
+---
+sudo -s 
+df -h 
+mkdir -p /data
+mount /dev/xvdh /data
+ls 
+df -h 
+clear 
+cd /data/
+ls
+cd test/
+ls
+exit 
+exit
+---
+terraform destroy 
+
+
+
+
+
+

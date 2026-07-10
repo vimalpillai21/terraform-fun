@@ -1,0 +1,17 @@
+mkdir Terraform_Modules/
+create main.tf
+touch provider.tf
+cd terrform
+git pull
+cd Terraform_Modules/
+ls
+terrform init
+terrform plan
+export AWS_ACCESSS_KEY=""
+export AWS_SECRET_KEY=""
+echo $AWS_ACCESSS_KEY
+echo $AWS_SECRET_KEY
+terrform plan
+terrform apply
+go to aws EC2 console and check ec2 instances
+

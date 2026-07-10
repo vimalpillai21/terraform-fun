@@ -1,0 +1,20 @@
+$export AWS_ACCESS_KEY_ID="accesskey"
+$export AWS_SECRET_ACCESS_KEY="secretkey"
+$export AWS_DEFAULT_REGION="us-east-2"
+env | grep -i aws
+printenv
+cd terraform
+cd "Start With Terraform Basics"/
+ls
+rm provider.tf
+ls 
+cat createInstance.tf
+terraform plan
+clear
+terraform apply
+enter a value - yes
+go to ec2 dashboard and check
+terraform destroy
+enter a value - yes
+
+

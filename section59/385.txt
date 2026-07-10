@@ -1,0 +1,26 @@
+mkdir UserDataCloudInit inside "Terraform for AWS Cloud" directory
+copy createInstance.tf, variables.tf and provider.tf in above folder
+create cloudinit.tf 
+create init.cfg
+cd terraform
+git pull
+cd Terraform for AWS Cloud/UserData CloudInit/
+ls
+ssh-keygen -f levelup_key
+clear
+terraform init
+terraform plan
+terraform apply
+copy public ip
+clear
+ssh public_ip -l ubuntu -i levelup_key
+---
+cd /var/log
+ls
+cat cloud-init.log 
+clear
+systemctl status apache2
+open the ec2 instance public ip in browser and check apache2 message
+exit
+
+

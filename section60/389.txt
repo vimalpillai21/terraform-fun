@@ -1,0 +1,14 @@
+mkdir AWS IAM
+copy variables.tf and provider.tf
+nano iamuser.tf
+cd terraform/
+git pull
+cd Terraform for AWS Cloud II/AWS IAM/
+ls
+terraform init
+clear
+terraform plan
+terraform apply 
+go to AWS IAM in AWS management console
+
+do not execute terraform destroy

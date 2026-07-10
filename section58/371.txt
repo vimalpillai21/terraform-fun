@@ -1,0 +1,27 @@
+edit the createInstance.tf --> resource "MyFirstInstance" and add the following
+---
+output "public_ip" {
+    value = aws_instance.MyFirstInstance.public_ip
+}
+
+provisioner "local-exec" {
+    command  = "echo aws_instance.MyFirstInstance.private_ip >> my_private_ips.txt"
+}
+---
+cd terraform/Terraform Concepts Building Blocks/Demo DataSource/
+git pull
+cat createInstance.tf
+clear
+terraform plan -var AWS_REGION="us-east-1"
+clear
+terraform apply
+copy ip-address of instance and go to AWS
+go instance detail page and copy private ip
+clear
+ls
+cat my_private_ips.txt
+terraform destroy
+
+
+
+

@@ -1,0 +1,23 @@
+mkdir Terraform_Advance
+mkdir conditional_statement
+nano create_instance.tf
+nano variable.tf
+cd terrform
+git pull
+cd Terraform_Advance/conditional_statement/
+ls
+terraform init
+clear
+terraform plan
+terraform apply 
+go to AWS EC2 and verify
+terraform destroy
+change variable environment value in variable.tf to "Production"
+git pull
+terraform plan
+terraform apply 
+go to AWS EC2 and verify
+terraform destroy
+
+
+

@@ -22,6 +22,7 @@ ssh publicIP -l ubuntu -i levelup_key
 sudo -s 
 df -h 
 clear
+lsblk -l
 mkfs.ext4 /dev/xvdh
 df -h 
 mkdir -p /data
@@ -35,12 +36,15 @@ df -h
 clear 
 ls
 sudo -s 
+lsblk -l,-f,-s --> find disk, UUID
 mkdir -p /data
 mount /dev/xvdh /data
 df -h 
 nano /etc/fstab
 ---
 /dev/xvdh /data ext4 defaults 0 0
+---
+UUID=12345678-abcd-1234-efgh-123456789abc /data ext4 defaults,nofail 0 2
 ---
 reboot the instance
 ssh publicIP -l ubuntu -i levelup_key

@@ -2,11 +2,14 @@
 *.tfvars
 .terraform
 .terraform.lock.hcl
+.terraform.tfstate.lock.info
 *.out
 terraform.tfstate
+
 terraform.tfstate.backup
 creds.txt
 vimalpillai_accessKeys.csv
 levelup_key
 levelup_key.pub
 my_private_ips.txt
+*.zip

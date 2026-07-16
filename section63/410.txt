@@ -1,0 +1,9 @@
+cd terraform/
+git pull
+cd Packer/Scenario2/
+ls
+packer validate scenario2.json
+packer build scenario2.json
+build fail due to error --> update code and then push
+git pull
+packer build scenario2.json

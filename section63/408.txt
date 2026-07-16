@@ -1,0 +1,8 @@
+wget packer
+ls
+unzip packer.zip
+ls
+rm -rf packer.zip
+sudo mv packer /usr/local/bin/
+packer
+packer --version

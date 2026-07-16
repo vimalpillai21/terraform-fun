@@ -1,0 +1,12 @@
+cd terraform
+git pull
+cd Packer/Scenario1/
+ls
+nano scenario1.json
+clear
+packer validate scenario1.json
+packer build scenario1.json
+
+
+
+

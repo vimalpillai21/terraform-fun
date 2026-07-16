@@ -1,0 +1,19 @@
+git pull
+cd Packer/Deploy_Custom_Image
+cd custom_ami_deployment
+packer validate install_custom_ami.json
+packer build install_custom_ami.json
+terraform init 
+clear 
+terraform apply -var AMI_ID=packer_ami_id
+ssh into ec2 instance
+clear
+apt list --installed
+clear
+apt list --installed | grep nginx
+apt list --installed | grep docker
+curl localhost
+sudo | docker pull nginx:latest
+terraform destroy
+
+

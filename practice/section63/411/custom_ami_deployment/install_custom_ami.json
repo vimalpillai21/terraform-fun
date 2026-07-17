@@ -1,0 +1,36 @@
+{
+    "variables": {
+        "aws_access_key": "",
+        "aws_secret_key": ""
+    },
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "access_key": "{{user `aws_access_key`}}",
+            "secret_key": "{{user `aws_secret_key`}}",
+            "region": "ap-south-1",
+            "source_ami_filter": {
+                "filters": {
+                    "virtualization-type": "hvm",
+                    "name": "ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-amd64-server-*",
+                    "root-device-type": "ebs"
+                },
+                "owners": [
+                    "099720109477"
+                ],
+                "most_recent": true
+            },
+            "instance_type": "t3.micro",
+            "ssh_username": "ubuntu",
+            "ami_name": "vimal-packer-custom-ami-{{timestamp}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type" : "shell",
+            "script": "./install_nginx.sh",
+            "execute_command": "sudo sh '{{ .Path }}'",
+            "pause_before": "10s"
+        }
+    ]
+}
